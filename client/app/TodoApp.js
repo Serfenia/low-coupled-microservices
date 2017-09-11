@@ -9,6 +9,7 @@ import {searchTodos, saveTodo, deleteTodo} from './../actions/todos';
 
 import TodoFilters from './TodoFilters';
 import TodoList from './TodoList';
+import Notification from "./Notification";
 
 const styles = {
     container: {
@@ -64,6 +65,9 @@ class TodoApp extends Component {
                         onSaveTodo={this.props.saveTodo}
                         onDeleteTodo={this.props.deleteTodo}
                     />
+                    <Notification
+                        notification={this.props.notification}
+                    />
                 </div>
             </MuiThemeProvider>
         )
@@ -83,9 +87,10 @@ TodoApp.childContextTypes = {
     muiTheme: PropTypes.object
 };
 
-export default connect(({todos}) => {
+export default connect(({todos, notification}) => {
     return {
-        todos
+        todos,
+        notification
     }
 }, (dispatch) => {
     const actions = {searchTodos, saveTodo, deleteTodo};

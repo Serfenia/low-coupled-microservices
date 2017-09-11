@@ -12,6 +12,10 @@ export function refreshTodos(todos) {
     return {type: 'REFRESH_TODOS', todos};
 }
 
+export function addValidTodo(todo) {
+    return {type: 'ADD_VALID_TODO', todo};
+}
+
 export function saveTodo(todo) {
     socket.emit('todos/create', todo);
     return {type: 'SAVE_TODO', todo};

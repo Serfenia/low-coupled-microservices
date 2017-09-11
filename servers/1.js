@@ -1,4 +1,7 @@
-import {publish, listen} from './rabbitmq';
+require('babel-core/register');
+require('babel-polyfill');
+
+const {publish, listen} = require('./rabbitmq');
 
 listen('create_todo', function (form, options) {
     const date = new Date();

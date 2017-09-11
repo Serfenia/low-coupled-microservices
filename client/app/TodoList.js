@@ -35,7 +35,7 @@ class TodoList extends Component {
 }
 
 TodoList.propTypes = {
-    todos: PropTypes.array.isRequired,
+    todos: PropTypes.array,
     onDeleteTodo: PropTypes.func.isRequired,
     onSaveTodo: PropTypes.func.isRequired
 };

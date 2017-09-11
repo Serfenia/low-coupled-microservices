@@ -1,8 +1,9 @@
 import { combineReducers } from 'redux';
 
-import {todos, todo} from './todos';
+import {todos} from './todos';
+import {notification} from './notifications';
 
 export default combineReducers({
     todos,
-    todo
+    notification
 });

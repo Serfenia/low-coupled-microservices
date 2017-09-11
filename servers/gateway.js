@@ -1,14 +1,14 @@
 require('babel-core/register');
 require('babel-polyfill');
-import {publish, listen} from './rabbitmq';
-import express from 'express';
-import http from 'http';
-import socketIo from 'socket.io';
+const {publish, listen} = require('./rabbitmq');
+const express = require('express');
+const http = require('http');
+const socketIo = require('socket.io');
 
 const server = http.Server(express());
-
 const io = socketIo(server);
 const todos = [];
+
 let clients = [];
 
 function listenToValidatedTodos(channel) {

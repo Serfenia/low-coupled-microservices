@@ -2,8 +2,19 @@ import { createStore } from 'redux'
 
 import rootReducer from './reducers/index'
 
+function getTodosFromStorage() {
+    try {
+        const todos = JSON.parse(localStorage.getItem('todos'));
+        return todos instanceof Array ? todos : [];
+    } catch (err) {
+        return [];
+    }
+}
+
+
 const defaultState = {
-    todos: []
+    todos: getTodosFromStorage(),
+    notification: {}
 };
 
 let middleware = null;
