@@ -12,8 +12,8 @@
     "build": "webpack",
     "serve:dev": "NODE_ENV=development && node_modules/.bin/webpack-dev-server --hot --inline --progress --colors --port 8080 --content-base ./build",
     "serve:client": "node app.js",
-    "serve:server:1": "SERVER_1_PORT=3001 && node --harmony --use-strict servers/1.js",
-    "serve:server:2": "SERVER_2_PORT=3002 && node --harmony --use-strict servers/2.js",
+    "serve:todo-creator": "SERVER_1_PORT=3001 && node --harmony --use-strict servers/todo-creator.js",
+    "serve:todo-validator": "SERVER_2_PORT=3002 && node --harmony --use-strict servers/todo-validator.js",
     "serve:gateway": "GATEWAY_PORT=3000 && node --harmony --use-strict servers/gateway.js",
     "postinstall": "node_modules/.bin/webpack"
   },

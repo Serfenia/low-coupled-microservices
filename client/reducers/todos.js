@@ -5,6 +5,9 @@ export function todos(state = [], action) {
         case 'REFRESH_TODOS':
             return action.todos;
             break;
+        case 'DELETE_TODO':
+            return [...state.filter((t, index) => index !== action.index)];
+            break;
         default: return state;
     }
 }

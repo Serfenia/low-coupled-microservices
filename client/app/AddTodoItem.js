@@ -21,7 +21,7 @@ class AddTodoItem extends Component {
         this.setState({
             value: ''
         }, () => {
-            this.props.onSaveTodo({
+            this.props.onCreateTodo({
                 content: state.value
             });
         });
@@ -53,7 +53,7 @@ class AddTodoItem extends Component {
 }
 
 AddTodoItem.propTypes = {
-    onSaveTodo: PropTypes.func.isRequired
+    onCreateTodo: PropTypes.func.isRequired
 };
 
 export default AddTodoItem;

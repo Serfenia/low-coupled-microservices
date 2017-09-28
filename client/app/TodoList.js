@@ -28,7 +28,7 @@ class TodoList extends Component {
                         ];
                     })
                 }
-                <AddTodoItem onSaveTodo={this.props.onSaveTodo} />
+                <AddTodoItem onCreateTodo={this.props.onCreateTodo} />
             </List>
         )
     }
@@ -37,7 +37,7 @@ class TodoList extends Component {
 TodoList.propTypes = {
     todos: PropTypes.array,
     onDeleteTodo: PropTypes.func.isRequired,
-    onSaveTodo: PropTypes.func.isRequired
+    onCreateTodo: PropTypes.func.isRequired
 };
 TodoList.defaultProps = {
     todos: []

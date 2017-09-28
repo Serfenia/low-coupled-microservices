@@ -17,12 +17,8 @@ const defaultState = {
     notification: {}
 };
 
-let middleware = null;
-if (window.devToolsExtension) {
-    middleware = window.devToolsExtension();
-} else {
-    middleware = null;
-}
+const store = window.devToolsExtension
+    ? createStore(rootReducer, defaultState, window.devToolsExtension())
+    : createStore(rootReducer, defaultState);
 
-const store = createStore(rootReducer, defaultState, middleware);
 export default store;

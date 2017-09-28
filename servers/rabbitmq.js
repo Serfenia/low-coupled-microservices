@@ -15,7 +15,7 @@ export function publish(queue, message, options) {
     });
 }
 
-export function listen(queue, callback) {
+export function subscribe(queue, callback) {
     amqp.connect('amqp://localhost').then(function(conn) {
         conn.createChannel().then(function(ch) {
             ch.assertQueue(queue, {durable: false});
